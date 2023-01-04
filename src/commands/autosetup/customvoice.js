@@ -8,7 +8,7 @@ module.exports = async (client, interaction, args) => {
         type: Discord.ChannelType.GuildCategory,
     }).then((cat) => {
         interaction.guild.channels.create({
-            name: "➕ Create Voice",
+            name: "➕ Create Custom Voice",
             type:  Discord.ChannelType.GuildVoice,
             parent: cat.id,
             permissionOverwrites: [
@@ -22,14 +22,14 @@ module.exports = async (client, interaction, args) => {
                 if (data) {
                     data.Category = cat.id;
                     data.Channel = ch.id
-                    data.ChannelName = "{emoji} {channel name}"
+                    data.ChannelName = "{emoji} {member tag} {channel name}"
                     data.save();
                 }
                 else {
                     new voiceSchema({
                         Guild: interaction.guild.id,
                         Channel: ch.id,
-                        ChannelName: "{emoji} {channel name}",
+                        ChannelName: "{emoji} {member tag} {channel name}",
                         Category: cat.id
                     }).save();
                 }
