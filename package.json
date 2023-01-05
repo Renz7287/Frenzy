@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node . --trace-warnings",
+    "auto": "nodemon . --trace-warnings",
     "add-dev": "node src/dev.js"
   },
   "keywords": [
@@ -70,5 +71,8 @@
     "util": "^0.12.5",
     "weather-js": "^2.0.0",
     "ytdl-core": "^4.11.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
